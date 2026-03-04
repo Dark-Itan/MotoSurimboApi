@@ -14,12 +14,13 @@ data class Unit(
 
 @Serializable
 data class CreateUnitRequest(
-    val unitNumber: String,
-    val driverName: String,
-    val licensePlate: String,
-    val status: String,
-    val shift: String
+    val unitNumber: String = "",
+    val driverName: String = "",
+    val licensePlate: String = "",
+    val status: String = "",
+    val shift: String = ""
 )
+
 
 @Serializable
 data class UpdateUnitRequest(

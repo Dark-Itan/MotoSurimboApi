@@ -11,11 +11,11 @@ object DatabaseSingleton {
     fun init() {
         val config = HikariConfig().apply {
             driverClassName = "org.postgresql.Driver"
-            jdbcUrl = "jdbc:postgresql://18.207.235.148:5433/motosurimbo_db"
+            jdbcUrl = "jdbc:postgresql://18.207.235.148:5434/motosurimbo_db"
             username = "postgres"
             password = "albafica"
             maximumPoolSize = 10
-            isAutoCommit = false
+            isAutoCommit = true
         }
 
         dataSource = HikariDataSource(config)

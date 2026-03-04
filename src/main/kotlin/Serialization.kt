@@ -15,7 +15,12 @@ import org.slf4j.event.*
 
 fun Application.configureSerialization() {
     install(ContentNegotiation) {
-        json()
+        json(kotlinx.serialization.json.Json {
+            prettyPrint = true
+            isLenient = true
+            ignoreUnknownKeys = true
+            encodeDefaults = true
+        })
     }
     routing {
         get("/json/kotlinx-serialization") {
@@ -23,3 +28,4 @@ fun Application.configureSerialization() {
         }
     }
 }
+
